@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaUI", "LaUI\LaUI.csproj", "{A55ECABD-A490-4A3E-A0B8-8AE28C37FC91}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A55ECABD-A490-4A3E-A0B8-8AE28C37FC91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A55ECABD-A490-4A3E-A0B8-8AE28C37FC91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A55ECABD-A490-4A3E-A0B8-8AE28C37FC91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A55ECABD-A490-4A3E-A0B8-8AE28C37FC91}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8CD753A8-1CB9-436C-B9F2-CDE0A6E7D969}
+	EndGlobalSection
+EndGlobal
