@@ -1,8 +1,8 @@
-﻿namespace LaUI.Controls
-{
-    using System.Windows;
-    using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 
+namespace LaUI.Control
+{
     public class AccordionItem:ListBoxItem
     {
         #region DependencyProperty

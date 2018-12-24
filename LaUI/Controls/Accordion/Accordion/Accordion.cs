@@ -1,4 +1,4 @@
-﻿namespace LaUI.Controls
+﻿namespace LaUI.Control
 {
     using System.Windows;
     using System.Windows.Controls;
@@ -15,11 +15,17 @@
 
         #endregion
 
+        #region Property
+
+
+        #endregion
+
         #region Override
 
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
+            base.SelectionMode = SelectionMode.Single;
         }
 
         #endregion
