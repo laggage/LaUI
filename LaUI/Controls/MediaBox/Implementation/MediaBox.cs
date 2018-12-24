@@ -11,7 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using XamlAnimatedGif;
 
-namespace LaUI.Controls.MediaBox.Implementation
+namespace LaUI.Controls
 {
     /********************************************************************************
 
@@ -31,7 +31,7 @@ namespace LaUI.Controls.MediaBox.Implementation
 
     *********************************************************************************/
 
-    public class MediaBox:FrameworkElement
+    public class MediaBox:System.Windows.Controls.Control,IDisposable
     {
         #region Fields
 
@@ -45,7 +45,7 @@ namespace LaUI.Controls.MediaBox.Implementation
         #region DependencyProperty
 
         #region Url
-
+        //media source
         public string Url
         {
             get => (string)GetValue(UrlProperty);

@@ -8,7 +8,7 @@ using System.Windows;
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("LaUI")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("自用WPFUI控件库,仿MetroUI")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("LaUI")]
