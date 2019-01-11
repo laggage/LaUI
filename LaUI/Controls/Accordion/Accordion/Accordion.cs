@@ -17,6 +17,10 @@
 
         #region Property
 
+        #region DependencyProperty
+
+
+        #endregion
 
         #endregion
 
@@ -25,7 +29,6 @@
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
-            base.SelectionMode = SelectionMode.Single;
         }
 
         #endregion

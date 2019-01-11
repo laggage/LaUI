@@ -11,8 +11,8 @@ namespace LaUI.Control
 
         public string Header
         {
-            get { return (string)GetValue(HeaderProperty); }
-            set { SetValue(HeaderProperty, value); }
+            get => (string)GetValue(HeaderProperty);
+            set => SetValue(HeaderProperty, value);
         }
 
         // Using a DependencyProperty as the backing store for Header.  This enables animation, styling, binding, etc...

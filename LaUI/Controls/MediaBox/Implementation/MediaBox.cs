@@ -31,8 +31,26 @@ namespace LaUI.Control
 
     *********************************************************************************/
 
+    [TemplateVisualState(Name = "Video", GroupName = "MediaKind")]
+    [TemplateVisualState(Name = "Image", GroupName = "MediaKind")]
+    [TemplateVisualState(Name = "Play", GroupName = "VideoState")]
+    [TemplateVisualState(Name = "Stop", GroupName = "VideoState")]
+    [TemplateVisualState(Name = "MouseOver", GroupName = "CommonStates")]
+    [TemplatePart(Name = "FrameDisplay", Type = typeof(Image))]
+    [TemplatePart(Name = "VideoControlButton", Type = typeof(ToggleButton))]
     public class MediaBox:System.Windows.Controls.Control,IDisposable
     {
+        #region Constructor
+
+        static MediaBox()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(MediaBox),
+                new FrameworkPropertyMetadata(typeof(MediaBox)));
+        }
+
+        #endregion
+
+
         #region Fields
 
         private Image _image = null;
@@ -41,6 +59,12 @@ namespace LaUI.Control
         private MediaType _mediaType;
 
         #endregion
+
+
+        #region Property
+
+        public new double ActualWidth => _image.ActualWidth;
+        public new double ActualHeight => _image.ActualHeight;
 
         #region DependencyProperty
 
@@ -138,51 +162,8 @@ namespace LaUI.Control
 
         #endregion
 
-        #region Property
-
-        public new double ActualWidth => _image.ActualWidth;
-        public new double ActualHeight => _image.ActualHeight;
-
         #endregion
-
-        #region Constructor
-
-        static MediaBox()
-        {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(MediaBox),
-                new FrameworkPropertyMetadata(typeof(MediaBox)));
-        }
-
-        #endregion
-
-        #region EventHandler
-
-        private void _capture_ImageGrabbed(object sender, EventArgs e)
-        {
-            try
-            {
-                //play again whenever video has over
-                if (_videoInfo?.FrameCount - 1 == (int)_capture.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.PosFrames))
-                    _capture.SetCaptureProperty(Emgu.CV.CvEnum.CapProp.PosFrames, 0);
-                _capture.Retrieve(_videoInfo?.CurrentFrame);
-
-                _image?.Dispatcher.BeginInvoke(new Action(() =>
-                {
-                    if (_videoInfo == null)
-                        return;
-                    _image.Source = BitmapSourceConvert.ToBitmapSource(_videoInfo?.CurrentFrame);
-                }));
-
-                if (_videoInfo?.IntervalSeconds != null)
-                    Thread.Sleep((int)(_videoInfo?.IntervalSeconds * 1000));
-            }
-            catch
-            {
-                // ignored
-            }
-        }
-
-        #endregion
+        
 
         #region Method
 
@@ -295,6 +276,35 @@ namespace LaUI.Control
         public void Dispose()
         {
             _capture?.Dispose();
+        }
+
+        #endregion
+
+        #region EventHandler
+
+        private void _capture_ImageGrabbed(object sender, EventArgs e)
+        {
+            try
+            {
+                //play again whenever video has over
+                if (_videoInfo?.FrameCount - 1 == (int)_capture.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.PosFrames))
+                    _capture.SetCaptureProperty(Emgu.CV.CvEnum.CapProp.PosFrames, 0);
+                _capture.Retrieve(_videoInfo?.CurrentFrame);
+
+                _image?.Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    if (_videoInfo == null)
+                        return;
+                    _image.Source = BitmapSourceConvert.ToBitmapSource(_videoInfo?.CurrentFrame);
+                }));
+
+                if (_videoInfo?.IntervalSeconds != null)
+                    Thread.Sleep((int)(_videoInfo?.IntervalSeconds * 1000));
+            }
+            catch
+            {
+                // ignored
+            }
         }
 
         #endregion
