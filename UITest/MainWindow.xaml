@@ -5,141 +5,27 @@
         xmlns:i ="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:LaUI ="clr-namespace:LaUI.Control;assembly=LaUI"
-        xmlns:metro="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        xmlns:vm="clr-namespace:UITest.ViewModels"
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
-        xmlns:converter="clr-namespace:UITest.Converter"
         mc:Ignorable="d"
         TextOptions.TextFormattingMode="Display" 
         TextOptions.TextRenderingMode="ClearType"
         Title="MainWindow" Height="600" Width="800">
-    <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Themes/HamburgerMenuTemplate.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-            <vm:AppViewModel x:Key="DataContext"/>
-
-            <Style x:Key="HamburgerMenuCreatorsOptionsItemStyle"
-               BasedOn="{StaticResource HamburgerMenuItemStyle}"
-               TargetType="{x:Type ListBoxItem}">
-                <Style.Triggers>
-                    <Trigger Property="IsMouseOver" Value="true">
-                        <Setter Property="Foreground" Value="{DynamicResource AccentBaseColorBrush}"/>
-                    </Trigger>
-                </Style.Triggers>
-                <Setter Property="metro:ItemHelper.ActiveSelectionBackgroundBrush" Value="Transparent" />
-                <Setter Property="metro:ItemHelper.ActiveSelectionForegroundBrush" Value="{DynamicResource AccentBaseColorBrush}" />
-                <Setter Property="metro:ItemHelper.DisabledForegroundBrush" Value="{DynamicResource GrayNormalBrush}" />
-                <Setter Property="metro:ItemHelper.DisabledSelectedBackgroundBrush" Value="Transparent" />
-                <Setter Property="metro:ItemHelper.DisabledSelectedForegroundBrush" Value="{DynamicResource GrayNormalBrush}" />
-                <Setter Property="metro:ItemHelper.HoverBackgroundBrush" Value="{DynamicResource GrayBrush9}" />
-            </Style>
-
-            <Style x:Key="HamburgerMenuCreatorsItemStyle"
-                   BasedOn="{StaticResource HamburgerMenuItemStyle}"
-                   TargetType="{x:Type ListBoxItem}">
-                <Setter Property="metro:ItemHelper.ActiveSelectionBackgroundBrush" Value="Transparent" />
-                <Setter Property="metro:ItemHelper.DisabledForegroundBrush" Value="{DynamicResource GrayNormalBrush}" />
-                <Setter Property="metro:ItemHelper.DisabledSelectedBackgroundBrush" Value="Transparent" />
-                <Setter Property="metro:ItemHelper.DisabledSelectedForegroundBrush" Value="{DynamicResource GrayNormalBrush}" />
-                <Setter Property="metro:ItemHelper.HoverBackgroundBrush" Value="Transparent" />
-                <Setter Property="metro:ItemHelper.HoverSelectedBackgroundBrush" Value="Transparent" />
-                <Setter Property="metro:ItemHelper.SelectedBackgroundBrush" Value="Transparent" />
-            </Style>
-
-            <Style x:Key="HamburgerMenuCreatorsStyle"
-                   BasedOn="{StaticResource {x:Type metro:HamburgerMenu}}"
-                   TargetType="{x:Type metro:HamburgerMenu}">
-                <Setter Property="ItemContainerStyle" Value="{StaticResource HamburgerMenuCreatorsItemStyle}" />
-                <Setter Property="OptionsItemContainerStyle" Value="{StaticResource HamburgerMenuCreatorsOptionsItemStyle}" />
-                <Setter Property="PaneBackground" Value="{DynamicResource WhiteBrush}" />
-                <Setter Property="PaneForeground" Value="{DynamicResource TextBrush}" />
-                <Setter Property="ShowSelectionIndicator" Value="False" />
-            </Style>
-
-            <!--图片项的数据模板-->
-            <DataTemplate x:Key="ImageItemTemplate">
+    <Grid >
+        <LaUI:FlipPanel Margin="3" 
+                        Header="反转" 
+                        FontSize="16">
+            <LaUI:FlipPanel.FrontContent>
                 <Border>
-                    <Grid HorizontalAlignment="Left">
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="4*"/>
-                            <ColumnDefinition Width="6*"/>
-                        </Grid.ColumnDefinitions>
-                        <Image VerticalAlignment="Center" HorizontalAlignment="Center"
-                               Height="64" Width="64"
-                               Grid.Row="0" Grid.Column="0" Margin="5" Stretch="Fill"
-                               Grid.RowSpan="4"/>
-                        <TextBlock Grid.Column="1" Grid.Row="0" Margin="3"
-                                       Text="{Binding Path = Name,Mode=OneWay, FallbackValue=Laggage.jpg}"/>
-                        <TextBlock Grid.Column="1" Grid.Row="1"  Margin="3"
-                                       Text="{Binding Path = Path,Mode=OneWay,FallbackValue=D:/Media/Image/Laggage.jpg}"/>
-                        <TextBlock Grid.Column="1" Grid.Row="2"  Margin="3"
-                                       Text="{Binding FileSize,Converter={StaticResource FileSizeConverter}, 
-                                Mode=OneWay,FallbackValue=-2.73M}" />
-                        <TextBlock Grid.Column="1" Grid.Row="3"  Margin="3"
-                                       Text="{Binding FrameSize,Converter={StaticResource SizeConverter},
-                                Mode=OneWay, FallbackValue=-300 x -300}"/>
-                    </Grid>
+                    <Image Source="E:\Media\Images\壁纸\ (1).jpg" 
+                           Stretch="Fill"/>
                 </Border>
-            </DataTemplate>
-
-            <!--视频的数据模板-->
-            <DataTemplate x:Key="VideoItemTemplate">
+            </LaUI:FlipPanel.FrontContent>
+            <LaUI:FlipPanel.BackContent>
                 <Border>
-                    <Grid HorizontalAlignment="Left" >
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="4*"/>
-                            <ColumnDefinition Width="6*"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Grid.Row="0" Grid.Column="0"
-                               HorizontalAlignment="Center" VerticalAlignment="Center"
-                               Height="64" Width="64"
-                               Margin="5" Stretch="Fill"
-                               Grid.RowSpan="5"
-                               Source="{Binding Path = Thumbnail}"/>
-                        <TextBlock Grid.Column="1" Grid.Row="0" Margin="3"
-                                       Text="{Binding Path = Name,Mode=OneWay, FallbackValue=Laggage.jpg}"/>
-                        <TextBlock Grid.Column="1" Grid.Row="1"  Margin="3"
-                                       Text="{Binding Path = Path,Mode=OneWay,FallbackValue=D:/Media/Image/Laggage.jpg}"/>
-                        <TextBlock Grid.Column="1" Grid.Row="2"  Margin="3"
-                                       Text="{Binding FileSize,Converter={StaticResource FileSizeConverter}, 
-                                Mode=OneWay,FallbackValue=-2.73M}" />
-                        <TextBlock Grid.Column="1" Grid.Row="3"  Margin="3"
-                                   Text="{Binding FrameSize,
-                                Mode=OneWay, FallbackValue=-300 x -300}"/>
-                        <TextBlock Grid.Column="1" Grid.Row="4"  Margin="3"
-                                   Text="{Binding Frames,Mode=OneWay, ConverterParameter=帧,
-                            Converter={StaticResource StringAppendConverter},
-                            FallbackValue=-300 x -300}"/>
-                    </Grid>
+                    <Image Source="E:\Media\Images\壁纸\ (2).jpg" 
+                           Stretch="Fill"/>
                 </Border>
-            </DataTemplate>
-
-        </ResourceDictionary>
-    </Window.Resources>
-    <Window.DataContext>
-        <StaticResource ResourceKey="DataContext"/>
-    </Window.DataContext>
-
-    <Grid>
-        <Image Source="E:\Media\Images\Src\3.jpg" Stretch="Fill"/>
-        <Canvas>
-            <LaUI:SelectRegionCtrl Height="200" Width="200"/>
-        </Canvas>
+            </LaUI:FlipPanel.BackContent>
+        </LaUI:FlipPanel>
     </Grid>
-
 </Window>

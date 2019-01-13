@@ -5,5 +5,6 @@
         <ResourceDictionary Source="/LaUI;component/Controls/MediaBox/Style/MediaBox.xaml" />
         <ResourceDictionary Source="/LaUI;component/Controls/IconToggleButton/Style/IconToggleButtonThemes.xaml" />
         <ResourceDictionary Source="/LaUI;component/Controls/SelectRegionCtrl/Style/SelectRegionCtrlThemes.xaml" />
+        <ResourceDictionary Source="/LaUI;component/Controls/FlipPanel/Style/FilpPanel.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

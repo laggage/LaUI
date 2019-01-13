@@ -43,12 +43,6 @@
     <Reference Include="MahApps.Metro.IconPacks, Version=2.3.0.4, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.IconPacks.2.3.0\lib\net45\MahApps.Metro.IconPacks.dll</HintPath>
     </Reference>
-    <Reference Include="MainApp.Enums, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MainApp.IconPack.1.0.2\lib\MainApp.Enums.dll</HintPath>
-    </Reference>
-    <Reference Include="MainApp.IconPack, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MainApp.IconPack.1.0.2\lib\MainApp.IconPack.dll</HintPath>
-    </Reference>
     <Reference Include="MediaProcess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\ThreeDAdMachine\ThreeDAdMachine\MediaProcess\bin\Release\MediaProcess.dll</HintPath>
