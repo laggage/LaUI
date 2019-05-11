@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Navigation;
+﻿using System.Collections.Generic;
 using Microsoft.Practices.Prism.ViewModel;
 using UITest.Models;
 
@@ -18,8 +13,8 @@ namespace UITest.ViewModels
                 Images = new List<Image>()
                 {
                     new Image(@"E:\Media\Images\壁纸\ (1).jpg"),
-                    new Image(@"E:\Media\Images\壁纸\ (2).jpg"),
-                    new Image(@"E:\Media\Images\壁纸\ (3).jpg")
+                    new Image(@"E:\Media\Images\壁纸\ (40).jpg"),
+                    new Image(@"E:\Media\Images\壁纸\ (41).jpg")
                 };
         }
 

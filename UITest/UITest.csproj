@@ -75,6 +75,12 @@
     </ApplicationDefinition>
     <Compile Include="Converter\NumMultiplyConverter.cs" />
     <Compile Include="ViewModels\AppViewModel.cs" />
+    <Compile Include="View\AccordionDemo.xaml.cs">
+      <DependentUpon>AccordionDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ButtonDemo.xaml.cs">
+      <DependentUpon>ButtonDemo.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -87,6 +93,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\AccordionDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ButtonDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Image.cs" />

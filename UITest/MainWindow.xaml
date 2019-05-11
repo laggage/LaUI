@@ -4,28 +4,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:i ="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:LaUI ="clr-namespace:LaUI.Control;assembly=LaUI"
+        xmlns:laUi ="clr-namespace:LaUI.Control;assembly=LaUI"
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         mc:Ignorable="d"
         TextOptions.TextFormattingMode="Display" 
         TextOptions.TextRenderingMode="ClearType"
         Title="MainWindow" Height="600" Width="800">
-    <Grid >
-        <LaUI:FlipPanel Margin="3" 
-                        Header="反转" 
-                        FontSize="16">
-            <LaUI:FlipPanel.FrontContent>
-                <Border>
-                    <Image Source="E:\Media\Images\壁纸\ (1).jpg" 
-                           Stretch="Fill"/>
-                </Border>
-            </LaUI:FlipPanel.FrontContent>
-            <LaUI:FlipPanel.BackContent>
-                <Border>
-                    <Image Source="E:\Media\Images\壁纸\ (2).jpg" 
-                           Stretch="Fill"/>
-                </Border>
-            </LaUI:FlipPanel.BackContent>
-        </LaUI:FlipPanel>
-    </Grid>
+    <TabControl>
+        <TabControl.Resources>
+            <Style TargetType="Frame">
+                <Setter Property="NavigationUIVisibility" Value="Hidden"/>
+            </Style>
+        </TabControl.Resources>
+        <TabItem Header="Accordion">
+            <Frame Source="./View/AccordionDemo.xaml" />
+        </TabItem>
+        <TabItem Header="IconToggleButton">
+            <Frame Source="./View/ButtonDemo.xaml"/>
+        </TabItem>
+    </TabControl>
 </Window>

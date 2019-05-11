@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Navigation;
+using System.Security;
 
 namespace UITest.Models
 {
@@ -16,39 +10,54 @@ namespace UITest.Models
 
         public Image(string imageUrl)
         {
+            if (string.IsNullOrEmpty(imageUrl))
+                throw new ArgumentNullException(nameof(imageUrl));
+            if (!File.Exists(imageUrl))
+                throw new FileNotFoundException("文件不存在", imageUrl);
+
             Url = imageUrl;
         }
 
         public string Url { get; set; }
 
-        public string Name => File.Exists(Url) ? Path.GetFileName(Url) : "";
+        public string Name => Path.GetFileName(Url);
 
         public string NameWithOutExtension => File.Exists(Url) ? Path.GetFileNameWithoutExtension(Url) : "";
 
-        public string FileSize
-        {
-            get
-            {
-                string[] sizeUnitTable = { "B", "KB", "MB", "GB", "T" };
-                try
-                {
-                    byte i = 0;
-                    FileInfo fileInfo = new FileInfo(Url);
-                    long length = fileInfo.Length;
-                    while ((length /= 1024) != 0)
-                    {
-                        i++;
-                    }
-                    i = i > 4 ? (byte)4 : i;
+        public string ImageSizeString => GetFileSizeString(Url);
 
-                    return fileInfo.Length / Math.Pow(1024, i) + sizeUnitTable[i]; ;
-                }
-                catch (Exception)
-                {
-                    return "";
-                }
+        private static string GetFileSizeString(string path)
+        {
+            try
+            {
+                FileInfo fileInfo = new FileInfo(path);
+                return GetFileSizeString(fileInfo.Length);
+            }
+            catch (UnauthorizedAccessException)
+            {
+                throw new UnauthorizedAccessException("没有权限读取文件");
+            }
+            catch (SecurityException)
+            {
+                throw new SecurityException();
+            }
+            catch (NotSupportedException)
+            {
+                throw new NotSupportedException();
             }
         }
+
+        private static string GetFileSizeString(long fileSizeOfByte)
+        {
+            long length = fileSizeOfByte;
+            byte i = 0;
+            string[] sizeUnitTable = {"B", "KB", "MB", "GB", "T"};
+            while ((length /= 1024) != 0)
+                i++;
+            i = i >= sizeUnitTable.Length ? (byte)(sizeUnitTable.Length - 1) : i;
+            return fileSizeOfByte / Math.Pow(1024, i) + sizeUnitTable[i];
+        }
+
 
         public override string ToString()
         {
