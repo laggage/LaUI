@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace UITest.View
+namespace UITest.ExampleView
 {
     /// <summary>
-    /// Interaction logic for AccordionDemo.xaml
+    /// Interaction logic for FlipPanelExample.xaml
     /// </summary>
-    public partial class AccordionDemo : Page
+    public partial class FlipPanelExample : UserControl
     {
-        public AccordionDemo()
+        public FlipPanelExample()
         {
             InitializeComponent();
         }

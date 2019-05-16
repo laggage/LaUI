@@ -4,23 +4,22 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:i ="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:laUi ="clr-namespace:LaUI.Control;assembly=LaUI"
+        xmlns:laUi ="clr-namespace:LaUI.Controls;assembly=LaUI"
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:view="clr-namespace:UITest.ExampleView"
         mc:Ignorable="d"
         TextOptions.TextFormattingMode="Display" 
         TextOptions.TextRenderingMode="ClearType"
-        Title="MainWindow" Height="600" Width="800">
+        Title="MainWindow" Height="600" Width="800"
+        FontSize="{StaticResource FontSize.Base}">
     <TabControl>
         <TabControl.Resources>
             <Style TargetType="Frame">
                 <Setter Property="NavigationUIVisibility" Value="Hidden"/>
             </Style>
         </TabControl.Resources>
-        <TabItem Header="Accordion">
-            <Frame Source="./View/AccordionDemo.xaml" />
-        </TabItem>
-        <TabItem Header="IconToggleButton">
-            <Frame Source="./View/ButtonDemo.xaml"/>
+        <TabItem Header="FlipPanel">
+            <view:FlipPanelExample/>
         </TabItem>
     </TabControl>
 </Window>

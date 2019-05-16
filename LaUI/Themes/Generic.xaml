@@ -1,10 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-    
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/LaUI;component/Controls/Accordion/Style/AccordionThemes.xaml" />
-        <ResourceDictionary Source="/LaUI;component/Controls/MediaBox/Style/MediaBox.xaml" />
-        <ResourceDictionary Source="/LaUI;component/Controls/IconToggleButton/Style/IconToggleButtonThemes.xaml" />
-        <ResourceDictionary Source="/LaUI;component/Controls/SelectRegionCtrl/Style/SelectRegionCtrlThemes.xaml" />
-        <ResourceDictionary Source="/LaUI;component/Controls/FlipPanel/Style/FilpPanel.xaml"/>
+        <ResourceDictionary Source="/LaUI;component/Styles/Colors.xaml"/>
+
+        <ResourceDictionary Source="/LaUI;component/Themes/FlipPanel.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

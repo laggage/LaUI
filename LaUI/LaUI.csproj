@@ -68,25 +68,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Controls\Accordion\Style\AccordionThemes.xaml">
+    <Page Include="Styles\Accents\Steel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\FlipPanel\Style\FilpPanel.xaml">
+    <Page Include="Styles\Colors.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\IconToggleButton\Style\IconToggleButtonThemes.xaml">
+    <Page Include="Styles\Font.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\MediaBox\Style\MediaBox.xaml">
+    <Page Include="Themes\FlipPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\SelectRegionCtrl\Style\SelectRegionCtrlThemes.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -95,12 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Behavior\CenterInCanvas.cs" />
-    <Compile Include="Controls\Accordion\Implementation\Accordion.cs" />
-    <Compile Include="Controls\Accordion\Implementation\AccordionItem.cs" />
-    <Compile Include="Controls\FlipPanel\Implementatation\FlipPanel.cs" />
-    <Compile Include="Controls\IconToggleButton\Implementation\IconToggleButton.cs" />
-    <Compile Include="Controls\MediaBox\Implementation\MediaBox.cs" />
-    <Compile Include="Controls\SelectRegionCtrl\Implementation\SelectRegionCtrl.cs" />
+    <Compile Include="Controls\FlipPanel.cs" />
     <Compile Include="Converter\DockReverseConverter.cs" />
     <Compile Include="Converter\NullToBoolConverter.cs" />
     <Compile Include="Converter\NullToVisibilityConverter.cs" />
