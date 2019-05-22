@@ -58,10 +58,17 @@
                                Header="Transition Flip panel"
                                FontSize="{StaticResource FontSize.Content}">
                 <control:FlipPanel.FrontContent>
-                    <StaticResource ResourceKey="img1"/>
+                    <StackPanel>
+                        <StaticResource ResourceKey="img1"/>
+                        <TextBlock HorizontalAlignment="Center"
+                                   Text="正面"/>
+                    </StackPanel>
                 </control:FlipPanel.FrontContent>
                 <control:FlipPanel.BackContent>
-                    <StaticResource ResourceKey="img2"/>
+                    <StackPanel Orientation="Vertical">
+                        <StaticResource ResourceKey="img2"/>
+                        <TextBlock HorizontalAlignment="Center" Text="反面"/>
+                    </StackPanel>
                 </control:FlipPanel.BackContent>
             </control:FlipPanel>
 
@@ -74,10 +81,18 @@
                                Padding="15 30"
                                CornerRadius="3">
                 <control:FlipPanel.FrontContent>
-                    <StaticResource ResourceKey="img1"/>
+                    <StackPanel>
+                        <StaticResource ResourceKey="img1"/>
+                        <TextBlock HorizontalAlignment="Center"
+                                   Text="正面"/>
+                    </StackPanel>
+                   
                 </control:FlipPanel.FrontContent>
                 <control:FlipPanel.BackContent>
-                    <StaticResource ResourceKey="img2"/>
+                    <StackPanel Orientation="Vertical">
+                        <StaticResource ResourceKey="img2"/>
+                        <TextBlock HorizontalAlignment="Center" Text="反面"/>
+                    </StackPanel>
                 </control:FlipPanel.BackContent>
             </control:FlipPanel>
         </Grid>

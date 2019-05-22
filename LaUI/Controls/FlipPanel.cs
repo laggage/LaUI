@@ -143,6 +143,8 @@ namespace LaUI.Controls
 
             if (GetTemplateChild(FlipButtonAlternateName) is ToggleButton btnAlternate)
                 btnAlternate.Click += flipButton_Click;
+            //this is essential!!!
+            ChangeVisualState();
         }
 
         private void flipButton_Click(object sender, RoutedEventArgs e)
