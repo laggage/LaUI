@@ -62,7 +62,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Converter\NumMultiplyConverter.cs" />
     <Compile Include="ExampleView\ButtonExample.xaml.cs">
       <DependentUpon>ButtonExample.xaml</DependentUpon>
     </Compile>
@@ -92,7 +91,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Image.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

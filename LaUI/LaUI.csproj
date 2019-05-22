@@ -75,9 +75,6 @@
   <ItemGroup>
     <Compile Include="Controls\FlipPanel.cs" />
     <Compile Include="Controls\Helper\ControlsHelper.cs" />
-    <Compile Include="Converter\DockReverseConverter.cs" />
-    <Compile Include="Converter\NullToBoolConverter.cs" />
-    <Compile Include="Converter\NullToVisibilityConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -101,9 +98,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Behavior\" />
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
