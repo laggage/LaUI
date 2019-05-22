@@ -252,14 +252,14 @@
         </Setter>
     </Style>
 
-    <Style x:Key="Style.AccentFlipPanel"
-           BasedOn="{StaticResource Style.FlipPanelHasHeaders}"
-           TargetType="control:FlipPanel">
-        <Setter Property="BorderBrush" Value="{DynamicResource AccentBaseColorBrush}"/>
-    </Style>
-
     <Style x:Key="Style.TransitionFlipPanel" 
            TargetType="{x:Type control:FlipPanel}">
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Background" Value="{DynamicResource WhiteBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource BlackBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
+        <Setter Property="Padding" Value="0"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type control:FlipPanel}">
@@ -275,9 +275,10 @@
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                     </ControlTemplate.Resources>
-                    <Border BorderBrush="{TemplateBinding BorderBrush}"
+                    <Border x:Name="bd" 
+                            BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            Background="{TemplateBinding Background}"
+                            Background="{DynamicResource AccentBaseColorBrush}"
                             CornerRadius="{TemplateBinding CornerRadius}"
                             Effect="{TemplateBinding Effect}">
                         <VisualStateManager.VisualStateGroups>
@@ -366,6 +367,17 @@
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
 
+                            <Border Grid.Row="0"
+                                    Grid.RowSpan="2"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="2"
+                                    Background="{TemplateBinding Background}"
+                                    CornerRadius="{TemplateBinding CornerRadius}"/>
+                            <Border Grid.Row="1"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="2"
+                                    Background="{TemplateBinding Background}"/>
+
                             <!--Header content-->
                             <ContentPresenter HorizontalAlignment ="{TemplateBinding HorizontalHeaderAlignment}" 
                                               VerticalAlignment="{TemplateBinding VerticalHeaderAlignment}" 
@@ -386,12 +398,13 @@
                                               Grid.ColumnSpan="2"/>
 
                             <!-- Flip Header -->
-                            <ContentPresenter Grid.Row="2" 
-                                              Grid.Column="0"  
-                                              Margin="3 0 3 3"
-                                              HorizontalAlignment="{TemplateBinding HorizontalFlipHeaderAlignment}" 
-                                              VerticalAlignment="{TemplateBinding VerticalFlipHeaderAlignment}"
-                                              Content="{TemplateBinding FlipHeader}" />
+                            <ContentControl Grid.Row="2" 
+                                            Grid.Column="0"  
+                                            Margin="3 3 3 3"
+                                            HorizontalAlignment="{TemplateBinding HorizontalFlipHeaderAlignment}" 
+                                            VerticalAlignment="{TemplateBinding VerticalFlipHeaderAlignment}"
+                                            Foreground="{StaticResource WhiteBrush}"
+                                            Content="{TemplateBinding FlipHeader}"/>
 
                             <ToggleButton x:Name="PART_FlipButton"
                                           Grid.Row="2" 
@@ -399,7 +412,7 @@
                                           Background="Transparent"
                                           Margin="3 0 3 3"
                                           Style="{StaticResource Style.ArrowToggleButton}" 
-                                          Foreground="{DynamicResource AccentColorBrush}"
+                                          Foreground="{StaticResource WhiteBrush}"
                                           RenderTransformOrigin="0.5,0.5">
                                 <ToggleButton.RenderTransform>
                                     <TransformGroup>
@@ -427,7 +440,7 @@
                                  SourceName="PART_FlipButton">
                             <Setter Property="Foreground" 
                                     TargetName="PART_FlipButton" 
-                                    Value="{DynamicResource HighlightBrush}"/>
+                                    Value="{StaticResource BlackBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -435,8 +448,14 @@
         </Setter>
     </Style>
 
+    <Style x:Key="Style.AccentFlipPanel"
+           BasedOn="{StaticResource Style.TransitionFlipPanel}"
+           TargetType="control:FlipPanel">
+        <Setter Property="BorderBrush" Value="{DynamicResource AccentBaseColorBrush}"/>
+    </Style>
+
     <!-- default flip panel style-->
-    <Style BasedOn="{StaticResource Style.FlipPanelHasHeaders}"
+    <Style BasedOn="{StaticResource Style.TransitionFlipPanel}"
            TargetType="{x:Type control:FlipPanel}"/>
 
 </ResourceDictionary>

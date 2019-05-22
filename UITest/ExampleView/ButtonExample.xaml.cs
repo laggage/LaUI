@@ -3,11 +3,11 @@
 namespace UITest.ExampleView
 {
     /// <summary>
-    /// Interaction logic for FlipPanelExample.xaml
+    /// ButtonExample.xaml 的交互逻辑
     /// </summary>
-    public partial class FlipPanelExample : UserControl
+    public partial class ButtonExample : UserControl
     {
-        public FlipPanelExample()
+        public ButtonExample()
         {
             InitializeComponent();
         }

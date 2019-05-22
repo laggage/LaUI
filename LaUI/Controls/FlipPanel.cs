@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 
@@ -41,7 +42,12 @@ namespace LaUI.Controls
         // Using a DependencyProperty as the backing store for IsFlipped.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty IsFlippedProperty =
             DependencyProperty.Register(nameof(IsFlipped), typeof(bool), typeof(FlipPanel),
-            new FrameworkPropertyMetadata(false));
+            new FrameworkPropertyMetadata(false, (dp, arg) =>
+                {
+                    dp = dp ?? throw new ArgumentNullException(nameof(dp));
+                    FlipPanel flipPanel = (dp as FlipPanel) ?? throw new ArgumentOutOfRangeException();
+                    flipPanel.ChangeVisualState();
+                }));
 
         public CornerRadius CornerRadius
         {
@@ -137,14 +143,11 @@ namespace LaUI.Controls
 
             if (GetTemplateChild(FlipButtonAlternateName) is ToggleButton btnAlternate)
                 btnAlternate.Click += flipButton_Click;
-
-            ChangeVisualState();
         }
 
         private void flipButton_Click(object sender, RoutedEventArgs e)
         {
             IsFlipped = !IsFlipped;
-            ChangeVisualState();
         }
 
         private void ChangeVisualState(bool useTransitions = true)
