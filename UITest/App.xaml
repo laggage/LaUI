@@ -9,6 +9,7 @@
                 <ResourceDictionary Source="pack://application:,,,/LaUI;component/Styles/Font.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/LaUI;component/Styles/Controls.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

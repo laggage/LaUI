@@ -21,5 +21,8 @@
         <TabItem Header="Button">
             <view:ButtonExample />
         </TabItem>
+        <TabItem Header="TextBox">
+            <view:TextBoxExampleView/>
+        </TabItem>
     </TabControl>
 </Window>

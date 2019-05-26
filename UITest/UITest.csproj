@@ -68,12 +68,19 @@
     <Compile Include="ExampleView\FlipPanelExample.xaml.cs">
       <DependentUpon>FlipPanelExample.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ExampleView\TextBoxExampleView.xaml.cs">
+      <DependentUpon>TextBoxExampleView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\AppViewModel.cs" />
     <Page Include="ExampleView\ButtonExample.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ExampleView\FlipPanelExample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExampleView\TextBoxExampleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

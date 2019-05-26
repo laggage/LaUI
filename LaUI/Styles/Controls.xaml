@@ -2,6 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/LaUI;component/Styles/Controls.Buttons.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/LaUI;component/Styles/Controls.TextBox.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/LaUI;component/Styles/Controls.TextBlock.xaml"/>
 
         <ResourceDictionary Source="pack://application:,,,/LaUI;component/Themes/FlipPanel.xaml" />
     </ResourceDictionary.MergedDictionaries>

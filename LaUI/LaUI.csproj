@@ -55,6 +55,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Styles\Controls.TextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Styles\Controls.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -73,8 +77,13 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsyncUISupport\VisualTargetPresentationSource.cs" />
+    <Compile Include="Controls\ButtonAlignment.cs" />
     <Compile Include="Controls\FlipPanel.cs" />
     <Compile Include="Controls\Helper\ControlsHelper.cs" />
+    <Compile Include="Converters\MarkupConverter.cs" />
+    <Compile Include="Controls\Helper\TextBoxHelper.cs" />
+    <Compile Include="Converters\MathConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -97,6 +106,10 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Page Include="Styles\Controls.TextBlock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

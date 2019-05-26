@@ -7,4 +7,5 @@
     <sys:Double x:Key="FontSize.Base">18</sys:Double>
     <sys:Double x:Key="FontSize.Header">20</sys:Double>
 
+    <sys:Double x:Key="FontSize.WaterMark">14</sys:Double>
 </ResourceDictionary>
